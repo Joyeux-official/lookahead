@@ -22,7 +22,7 @@
 			"com.lookahead.LookAheadClient"
 		],
 		"fabric-datagen": [
-			"com.lookahead.LookAheadDataGenerator"
+			"com.lookahead.datagen.LookAheadDataGenerator"
 		]
 	},
 	"mixins": [
