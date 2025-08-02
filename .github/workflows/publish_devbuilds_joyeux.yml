@@ -49,7 +49,7 @@ jobs:
         with:
           url: ${{ secrets.JOYEUX_SERVER }}
           file: 'build/libs/*'
-          username: LookAhead Auto-Compiled Build
+          username: Look Ahead Auto-Compiled Build
           avatar: 'https://github.com/Joyeux-official/lookahead/blob/master/src/main/resources/assets/look-ahead/icon.png?raw=true'
           commit: '> :sparkles: [%MESSAGE%](<%LINK%>) by [%AUTHOR%](<%AUTHOR_LINK%>)! Happy testing!'
           message: |
