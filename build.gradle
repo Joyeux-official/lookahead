@@ -11,11 +11,10 @@ base {
 }
 
 repositories {
-	// Add repositories to retrieve artifacts from in here.
-	// You should only use this when depending on other mods because
-	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
-	// for more information about repositories.
+	maven {
+		url "https://jitpack.io"
+		metadataSources {
+			artifact()}}
 }
 
 loom {
@@ -44,14 +43,18 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	
+	modImplementation ("com.github.Addi3:Joyeux-Lib:${project.joyeux_lib_version}") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
 }
 
 processResources {
 	inputs.property "version", project.version
+	inputs.property "joyeux_lib_version", project.joyeux_lib_version
 
 	filesMatching("fabric.mod.json") {
-		expand "version": inputs.properties.version
+		expand "version": inputs.properties.version,
+				"joyeux_lib_version": project.joyeux_lib_version
 	}
 }
 
